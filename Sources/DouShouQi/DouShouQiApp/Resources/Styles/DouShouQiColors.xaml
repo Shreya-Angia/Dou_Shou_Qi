@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Color x:Key="Background-LIGHT">#F5F2EB</Color>
+    <Color x:Key="BgObject-LIGHT">#D7C9A5</Color>
+    <Color x:Key="BgObjectChild-LIGHT">#A8A47F</Color>
+    <Color x:Key="Border-LIGHT">#8B6A3B</Color>
+    <Color x:Key="BorderChild-LIGHT">#5F4B2C</Color>
+    <Color x:Key="Text-LIGHT">#2F2C24</Color>
+    <Color x:Key="TextTitle-LIGHT">#4E5A32</Color>
+    <Color x:Key="TextTitle2-LIGHT">#BDA25D</Color>
+    <Color x:Key="BgBoard-LIGHT">#C2B88D</Color>
+    <Color x:Key="Water-LIGHT">#3E6AB3</Color>
+    <Color x:Key="Dry-LIGHT">#9FBAD3</Color>
+    <Color x:Key="BoardBorder-LIGHT">#7A6E42</Color>
+    <Color x:Key="Grec-LIGHT">#1E4D9B</Color>
+    <Color x:Key="Roman-LIGHT">#8C1D22</Color>
+    <Color x:Key="BorderPiece-LIGHT">#442A1D</Color>
+
+    <Color x:Key="Background-DARK">#1C1916</Color>
+    <Color x:Key="BgObject-DARK">#3D3327</Color>
+    <Color x:Key="BgObjectChild-DARK">#5B4C34</Color>
+    <Color x:Key="Border-DARK">#A67C52</Color>
+    <Color x:Key="BorderChild-DARK">#6C5439</Color>
+    <Color x:Key="Text-DARK">#EAD6B0</Color>
+    <Color x:Key="TextTitle-DARK">#D1AF6E</Color>
+    <Color x:Key="TextTitle2-DARK">#E8C77E</Color>
+    <Color x:Key="BgBoard-DARK">#3E3727</Color>
+    <Color x:Key="Water-DARK">#2F4C88</Color>
+    <Color x:Key="Dry-DARK">#7C90A3</Color>
+    <Color x:Key="BoardBorder-DARK">#5B4B2F</Color>
+    <Color x:Key="Grec-DARK">#2D62B5</Color>
+    <Color x:Key="Roman-DARK">#A12F2F</Color>
+    <Color x:Key="BorderPiece-DARK">#402D1F</Color>
+
+</ResourceDictionary>

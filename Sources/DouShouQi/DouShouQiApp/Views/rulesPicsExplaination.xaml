@@ -1,0 +1,49 @@
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DouShouQiApp.Views.rulesPicsExplaination"
+             BackgroundColor="Transparent">
+
+    <Grid ColumnDefinitions="Auto, *"
+          Padding="10"
+          RowSpacing="10">
+
+        <!-- Image  -->
+        <Border Background="White"  
+                Stroke="Gray"
+                StrokeThickness="2"
+                Padding="10"
+                HorizontalOptions="Start">
+            <Image x:Name="RulesImage" 
+                   Source="{Binding Image}" 
+                   HeightRequest="200"
+                   WidthRequest="300"
+                   Aspect="AspectFit"/> 
+        </Border>
+
+        <!-- Explanation part -->
+        <Border Background="White" 
+                Stroke="Gray" 
+                StrokeThickness="2" 
+                Padding="30"
+                HeightRequest="300"
+                Grid.Column="1"
+                VerticalOptions="Center">
+            <ScrollView>
+                <VerticalStackLayout Spacing="5">
+                    <Label x:Name="RulesTitle"
+                           Text="{Binding Title}" 
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="Black"/>
+                    <Label x:Name="RulesContent" 
+                           Text="{Binding Content}" 
+                           FontSize="14"
+                           TextColor="Black"
+                           HorizontalOptions="Fill" />
+                </VerticalStackLayout>
+            </ScrollView>
+        </Border>
+
+    </Grid>
+
+</ContentView>

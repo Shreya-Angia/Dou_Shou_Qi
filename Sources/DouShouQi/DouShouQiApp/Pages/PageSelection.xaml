@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:DouShouQiApp.Views"
+             x:Class="DouShouQiApp.Pages.PageSelection"
+             Title="PageSelection"
+             Shell.NavBarIsVisible="False">
+
+    <Grid BackgroundColor="Black">
+        <Image Source="{AppThemeBinding Light='cieljour.png', Dark='cielnuit.png'}"
+               Aspect="AspectFill"
+               Opacity="1"
+               ZIndex="0"/>
+
+        <Grid RowDefinitions="Auto, *"
+              Padding="10"
+              ZIndex="1">
+
+            <views:HeaderView PageTitle="S E L E C T I O N"/>
+
+            <Grid ColumnDefinitions="*,*" RowDefinitions="*,Auto" Grid.Row="1">
+
+                <!-- Greek -->
+                <VerticalStackLayout Grid.Row="0" Grid.Column="0"
+                                     Padding="200, 50, 50, 0"
+                                     Spacing="40">
+
+                    <Label Text="Greek" 
+                           FontSize="70" 
+                           TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"/>
+
+                    <HorizontalStackLayout HorizontalOptions="Center" Spacing="30" VerticalOptions="Center">
+                        <Label Text="Human"
+                               TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"
+                               FontSize="30"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"/>
+
+                        <HorizontalStackLayout HorizontalOptions="Center" Spacing="30">
+                            <RadioButton x:Name="GreekHumanRadio" GroupName="GreekGroup" CheckedChanged="OnRadioButtonCheckedChanged"/>
+                            <RadioButton x:Name="GreekIARadio" GroupName="GreekGroup" CheckedChanged="OnRadioButtonCheckedChanged"/>
+                        </HorizontalStackLayout>
+
+                        <Label Text="AI"
+                               FontSize="30"
+                               TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <VerticalStackLayout x:Name="GreekNameContainer">
+                        <Label Text="Username:"
+                               TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"
+                               FontSize="30"/>
+                        <Entry x:Name="GreekNameEntry" 
+                               TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"
+                               Placeholder="Enter your name"
+                               TextChanged="OnEntryTextChanged"/>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+
+                <!-- Roman -->
+                <VerticalStackLayout Grid.Row="0" Grid.Column="1" Padding="50, 50, 200, 0" Spacing="40">
+                    <Label Text="Roman" 
+                           FontSize="70" 
+                           FontAttributes="Bold"
+                           TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"
+                           HorizontalOptions="Center"/>
+
+                    <HorizontalStackLayout HorizontalOptions="Center" Spacing="30" VerticalOptions="Center">
+                        <Label Text="Human"
+                               FontSize="30"
+                               TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"/>
+
+                        <HorizontalStackLayout HorizontalOptions="Center" Spacing="30">
+                            <RadioButton x:Name="RomanHumanRadio" GroupName="RomanGroup" CheckedChanged="OnRadioButtonCheckedChanged"/>
+                            <RadioButton x:Name="RomanIARadio" GroupName="RomanGroup" CheckedChanged="OnRadioButtonCheckedChanged"/>
+                        </HorizontalStackLayout>
+                        <Label Text="AI"
+                               FontSize="30"
+                               TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <VerticalStackLayout x:Name="RomanNameContainer">
+                        <Label Text="Username:"
+                               TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"
+                               FontSize="30"/>
+                        <Entry x:Name="RomanNameEntry" 
+                               TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"
+                               Placeholder="Enter your name"
+                               TextChanged="OnEntryTextChanged"/>
+                    </VerticalStackLayout>
+
+                </VerticalStackLayout>
+
+                <Button x:Name="StartButton"
+                        Grid.Row="1" Grid.ColumnSpan="2"
+                        Text="Start"
+                        FontSize="25"
+                        Clicked="GoToGameBoard"
+                        TextColor="White"
+                        Margin="20"
+                        CornerRadius="10"
+                        IsEnabled="False"
+                        BackgroundColor="Gray"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>

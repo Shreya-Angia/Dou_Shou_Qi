@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DouShouQiApp.Views.leaderboardCard">
+
+    <Border Stroke="{AppThemeBinding Light={StaticResource BorderChild-LIGHT}, Dark={StaticResource BorderChild-DARK}}" StrokeThickness="2" StrokeShape="RoundRectangle 10">
+        <Grid ColumnDefinitions="*,2*,*,*,*" BackgroundColor="{AppThemeBinding Light={StaticResource BgObjectChild-LIGHT}, Dark={StaticResource BgObjectChild-DARK}}">
+            <Label Grid.Column="0"
+                   Text="1"
+                   FontSize="25"
+                   HorizontalOptions="Center"/>
+            <Label Grid.Column="1"
+                   Text="Grégoire"
+                   FontSize="25"
+                   HorizontalOptions="Center"/>
+            <Label Grid.Column="2"
+                   Text="17"
+                   FontSize="25"
+                   HorizontalOptions="Center"/>
+            <Label Grid.Column="3"
+                   Text="90"
+                   FontSize="25"
+                   HorizontalOptions="Center"/>
+            <Label Grid.Column="4"
+                   Text="22"
+                   FontSize="25"
+                   HorizontalOptions="Center"/>
+        </Grid>
+    </Border>
+</ContentView>

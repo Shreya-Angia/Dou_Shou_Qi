@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DouShouQiApp.Pages.RepriseGame"
+             Shell.NavBarIsVisible="False"
+             Title="RepriseGame">
+
+    <Grid BackgroundColor="Black">
+        <Image Source="{AppThemeBinding Light='marbre_blanc.jpg', Dark='marbre_noir.jpg'}"
+               Aspect="AspectFill"
+               Opacity="1"
+               ZIndex="0"/>
+
+        <Grid RowDefinitions="*,2*,*" ColumnDefinitions="*,2*,*">
+            <Border Grid.Row="1" Grid.Column="1"  Stroke="{AppThemeBinding Light={StaticResource Border-LIGHT}, Dark={StaticResource Border-DARK}}"
+                    StrokeThickness="4"
+                    StrokeShape="RoundRectangle 20">
+
+                <Grid Grid.Row="1" Grid.Column="1" 
+                      RowDefinitions="10*,5*,Auto" ColumnDefinitions="*,*" 
+                      ColumnSpacing="50"
+                      BackgroundColor="{AppThemeBinding Light={StaticResource BgObject-LIGHT}, Dark={StaticResource BgObject-DARK}}"
+                      Padding="30">
+
+                    <VerticalStackLayout Grid.Row="0" Grid.ColumnSpan="2" VerticalOptions="Center">
+                        <Label Text="A game has been started and is not finished."
+                               FontSize="30"
+                               TextColor="{StaticResource Text-LIGHT}"/>
+
+                        <Label Text="Would you like to continue?"
+                               FontSize="30"
+                               TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"/>
+                    </VerticalStackLayout>
+
+                    <Button Grid.Row="1" Grid.Column="0" 
+                            Text="Yes"
+                            FontSize="40"
+                            BackgroundColor="Green"/>
+
+                    <Button Grid.Row="1" Grid.Column="1"
+                            Text="No"
+                            FontSize="40"
+                            BackgroundColor="Red"/>
+                    <Label Grid.Row="2" Grid.Column="1"
+                           Text="All data will be destroyed"
+                           TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"/>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</ContentPage>

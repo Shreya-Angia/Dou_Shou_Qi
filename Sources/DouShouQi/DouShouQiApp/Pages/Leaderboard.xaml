@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DouShouQiApp.Pages.Leaderboard"
+             xmlns:views ="clr-namespace:DouShouQiApp.Views"
+             Shell.NavBarIsVisible="False"
+             Title="LeaderBoard">
+
+    <Grid BackgroundColor="Black">
+        <Image Source="{AppThemeBinding Light='marbre_blanc.jpg', Dark='marbre_noir.jpg'}"
+               Aspect="AspectFill"
+               Opacity="1"
+               ZIndex="0"/>
+
+        <Grid RowDefinitions="Auto, *"
+              Padding="10"
+              ZIndex="1">
+
+            <views:HeaderView PageTitle="L E A D E R B O A R D"/>
+
+            <Grid Grid.Row="1" ColumnDefinitions="*, 8*, *" RowDefinitions="Auto,*" Padding="20,20,20,0">
+
+                <Border Grid.Column="1" Grid.Row="0" StrokeShape="RoundRectangle 10"
+                        Stroke="{AppThemeBinding Light={StaticResource Border-LIGHT}, Dark={StaticResource Border-DARK}}">
+                    <Grid  ColumnDefinitions="*,2*,*,*,*" 
+                           BackgroundColor="{AppThemeBinding Light={StaticResource BgObject-LIGHT}, Dark={StaticResource BgObject-DARK}}" 
+                           Padding="0,5,0,5">
+                        <Label Grid.Column="0"
+                               Text="Rank"
+                               FontSize="20"
+                               HorizontalOptions="Center"/>
+                        <Label Grid.Column="1"
+                               Text="Name"
+                               FontSize="20"
+                               HorizontalOptions="Center"/>
+                        <Label Grid.Column="2"
+                               Text="Game won"
+                               FontSize="20"
+                               HorizontalOptions="Center"/>
+                        <Label Grid.Column="3"
+                               Text="Win rate"
+                               FontSize="20"
+                               HorizontalOptions="Center"/>
+                        <Label Grid.Column="4"
+                               Text="Game played"
+                               FontSize="20"
+                               HorizontalOptions="Center"/>
+                    </Grid>
+                </Border>
+
+                <ScrollView Grid.Row="1" Grid.Column="1" Padding="5">
+
+                    <VerticalStackLayout Spacing="5">
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                        <views:leaderboardCard/>
+                    </VerticalStackLayout>
+                </ScrollView>
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell x:Class="DouShouQiApp.AppShell"
+       xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:DouShouQiApp"
+       xmlns:pages="clr-namespace:DouShouQiApp.Pages"
+       Shell.FlyoutBehavior="Flyout"
+       Title="DouShouQiApp">
+    
+    <ShellContent
+        Title="Start"
+        ContentTemplate="{DataTemplate pages:StartPage}"
+        Route="StartPage"/>
+    
+    <ShellContent
+        Title="Prologue1"
+        ContentTemplate="{DataTemplate pages:Prologue_one}"  
+        Route="Prologue_one"
+        Shell.FlyoutItemIsVisible="False" />
+
+    <ShellContent
+        Title="Prologue2"
+        ContentTemplate="{DataTemplate pages:Prologue_two}"  
+        Route="Prologue_two"
+        Shell.FlyoutItemIsVisible="False" />
+
+    <ShellContent
+        Title="Prologue3"
+        ContentTemplate="{DataTemplate pages:Prologue_three}"  
+        Route="Prologue_three"
+        Shell.FlyoutItemIsVisible="False" />
+
+    <ShellContent
+        Title="Characters"
+        ContentTemplate="{DataTemplate pages:Character}"
+        Route="Character"
+        Shell.FlyoutItemIsVisible="False"/>
+    
+    <ShellContent
+        Title="Crédits"
+        ContentTemplate="{DataTemplate pages:Credits}"
+        Route="Credits"
+        Shell.FlyoutItemIsVisible="False"/>
+    
+    <ShellContent
+        Title="Règles"
+        ContentTemplate="{DataTemplate pages:Regles}" 
+        Route="Regles"
+        Shell.FlyoutItemIsVisible="False" />
+    
+    <ShellContent
+        Title="Parametres"
+        ContentTemplate="{DataTemplate pages:Parametre}"
+        Route="Parametre"
+        Shell.FlyoutItemIsVisible="False" />
+    
+    <ShellContent
+        Title="HomePage"
+        Route="HomePage"
+        ContentTemplate="{DataTemplate pages:HomePage}"
+        Shell.FlyoutItemIsVisible="False" />
+    
+    <ShellContent
+        Title="Customization"
+        ContentTemplate="{DataTemplate pages:Customization}" 
+        Route="Customization"
+        Shell.FlyoutItemIsVisible="False" />
+    
+    <ShellContent
+        Title="RepriseGame"
+        ContentTemplate="{DataTemplate pages:RepriseGame}"  
+        Route="RepriseGame"
+        Shell.FlyoutItemIsVisible="False"/>
+    
+    <ShellContent
+        Title="Select Game"
+        ContentTemplate="{DataTemplate pages:SelectGame}"
+        Route="SelectGame"
+        Shell.FlyoutItemIsVisible="False" />
+    
+    <ShellContent
+        Title="Selection"
+        ContentTemplate="{DataTemplate pages:PageSelection}"  
+        Route="PageSelection"
+        Shell.FlyoutItemIsVisible="False" />
+    
+    <ShellContent
+        Title="Defeated"
+        ContentTemplate="{DataTemplate pages:Defeat}"
+        Route="Defeat"
+        Shell.FlyoutItemIsVisible="False" />
+    
+    <ShellContent
+        Title="Victory"
+        ContentTemplate="{DataTemplate pages:Victory}"
+        Route="Victory"
+        Shell.FlyoutItemIsVisible="False" />
+    
+    <ShellContent
+        Title="LeaderBoard"
+        ContentTemplate="{DataTemplate pages:Leaderboard}"
+        Route="Leaderboard"
+        Shell.FlyoutItemIsVisible="False" />
+    
+    <ShellContent
+        Title="GameBoard"
+        ContentTemplate="{DataTemplate pages:GameBoard}"
+        Route="GameBoard"
+        Shell.FlyoutItemIsVisible="False" />
+    
+    <ShellContent
+        Title="Pause"
+        ContentTemplate="{DataTemplate pages:PausePage}"
+        Route="PausePage"
+        Shell.FlyoutItemIsVisible="False" />
+    
+    <ShellContent
+        Title="SurePause"
+        ContentTemplate="{DataTemplate pages:SurePausePage}"
+        Route="SurePausePage"
+        Shell.FlyoutItemIsVisible="False"/>
+    
+</Shell>

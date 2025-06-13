@@ -1,0 +1,188 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"  
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+             xmlns:views="clr-namespace:DouShouQiApp.Views"
+             xmlns:mylayouts="clr-namespace:DouShouQiApp.MyLayouts"  
+             xmlns:conv="clr-namespace:DouShouQiApp.Converter"  
+             x:Class="DouShouQiApp.Pages.GameBoard"  
+             Shell.NavBarIsVisible="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <conv:ColorConverter x:Key="CellColorConverter"
+                                 Item="Cell"/>
+            <conv:ColorConverter x:Key="PieceColorBorderConverter"
+                                 Item="Piece"
+                                 Item2="Border"/>
+            <conv:ColorConverter x:Key="PieceColorBackGroundConverter"
+                                 Item="Piece"
+                                 Item2="Background"/>
+            <conv:ColorConverter x:Key="PieceColorBackGroundColorConverter"
+                     Item="Piece"
+                     Item2="BackgroundColor"/>
+            <conv:ColorConverter x:Key="PseudoP1"
+                     Item="Pseudo"
+                     Item2="P1"/>
+            <conv:ColorConverter x:Key="PseudoP2"
+                     Item="Pseudo"
+                     Item2="P2"/>
+
+            <DataTemplate x:Key="pieceDead">
+                <Border BackgroundColor="Black">
+                    <Grid BackgroundColor="{AppThemeBinding Light={StaticResource Background-LIGHT}, Dark={StaticResource Background-DARK}}">
+                        <Label Text="{Binding Strength}" TextColor="White"/>
+                    </Grid>
+                </Border>
+            </DataTemplate>
+
+            <DataTemplate x:Key="cellTemplate">
+                <Image Source="{Binding ., Converter={StaticResource CellColorConverter}, Mode=OneWay}"
+                       Aspect="AspectFill"/>
+
+            </DataTemplate>
+
+            <DataTemplate x:Key="pieceTemplate">
+                <Border Stroke="{Binding ., Converter={StaticResource PieceColorBorderConverter}}"
+                        StrokeThickness="2"
+                        Margin="5"
+                        StrokeShape="RoundRectangle 50">
+                    <Image
+                        Source="{Binding ., Converter={StaticResource PieceColorBackGroundConverter}}"
+                        Aspect="AspectFill"
+                        BackgroundColor="{Binding ., Converter={StaticResource PieceColorBackGroundColorConverter}}">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Selected" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Border>
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid BackgroundColor="Black">
+        <Image Source="{AppThemeBinding Light='marbre_blanc.jpg', Dark='marbre_noir.jpg'}"
+               Aspect="AspectFill"
+               Opacity="1"
+               ZIndex="0"/>
+
+        <Grid RowDefinitions="Auto, *"
+              Padding="10"
+              ZIndex="1">
+
+            <Border Style="{StaticResource StyleBorderHeader}">
+
+                <Grid Grid.Row="0"
+                      ColumnDefinitions="Auto, *, Auto"
+                      BackgroundColor="{AppThemeBinding Light={StaticResource Background-LIGHT}, Dark={StaticResource Background-DARK}}">
+
+                    <Image Source="{AppThemeBinding Light='pause_black.png', Dark='pause_white.png'}"
+                           Grid.Column="0"
+                           Margin="10,0,0,0"
+                           Aspect="AspectFill"
+                           HeightRequest="40"
+                           WidthRequest="40"
+                           HorizontalOptions="Start"
+                           VerticalOptions="Center"
+                           ZIndex="10">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="GoToPause" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                    <Image Source="dou_shou_qi_mythology.png"  
+                           Grid.Column="1"  
+                           MaximumHeightRequest="70"  
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+
+                    <HorizontalStackLayout Grid.Column="2" HorizontalOptions="End" Spacing="10" Margin="0,0,10,0">
+
+                        <Image Source="{AppThemeBinding Light='volume_black.png', Dark='volume_white.png'}"
+                               Aspect="AspectFill"
+                               HeightRequest="40"
+                               WidthRequest="40"
+                               HorizontalOptions="End"
+                               VerticalOptions="Center"
+                               ZIndex="10"/>
+
+                    </HorizontalStackLayout>
+
+                </Grid>
+            </Border>
+
+            <Grid Grid.Row="1" RowDefinitions="Auto,*,Auto" Padding="20" RowSpacing="10">
+
+                <Grid ColumnDefinitions="*, Auto, *" Grid.Row="1">
+                    <Grid RowDefinitions="Auto,*" Grid.Column="0" Padding="20" RowSpacing="10"> 
+                        <Border>
+                            <ScrollView Grid.Row="0">
+                                <ScrollView Background="{AppThemeBinding Light={StaticResource BgObject-LIGHT}, Dark={StaticResource BgObject-DARK}}" MaximumHeightRequest="33">
+                                    <VerticalStackLayout>
+                                        <Label Text="{Binding GreekPseudo}"  
+                                            TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"
+                                            VerticalOptions="Center"
+                                            HorizontalOptions="Start"
+                                            FontSize="Medium"
+                                            LineBreakMode="WordWrap"/>
+                                    </VerticalStackLayout>
+                                </ScrollView>
+                            </ScrollView>
+                        </Border>
+                        <mylayouts:MatrixLayout
+                            Grid.Row="1"
+                            BindableLayout.ItemTemplate="{StaticResource pieceDead}"
+                            BindableLayout.ItemsSource="{Binding GreekPiece}"
+                            NbColumns="1" NbRows="8"/>
+                        <mylayouts:MatrixLayout
+                            Grid.Row="1"
+                            BindableLayout.ItemTemplate="{StaticResource pieceTemplate}"
+                            BindableLayout.ItemsSource="{Binding GreekPiece}"
+                            NbColumns="1" NbRows="8"/>
+                    </Grid>
+
+                    <mylayouts:MatrixLayout  
+                        Grid.Column="1"
+                        BindableLayout.ItemTemplate="{StaticResource cellTemplate}"  
+                        BindableLayout.ItemsSource="{Binding BoardGame}"   
+                        BackgroundColor="Black" />
+                    <mylayouts:MatrixLayout  
+                        Grid.Column="1"
+                        BindableLayout.ItemTemplate="{StaticResource pieceTemplate}"  
+                        BindableLayout.ItemsSource="{Binding boardWithPiece}"/>
+
+                    <Grid RowDefinitions="Auto,*" Grid.Column="2" Padding="20" RowSpacing="10">
+                        <Border>
+                            <ScrollView Grid.Row="0">
+                                <ScrollView Background="{AppThemeBinding Light={StaticResource BgObject-LIGHT}, Dark={StaticResource BgObject-DARK}}" MaximumHeightRequest="33">
+                                    <VerticalStackLayout>
+                                        <Label Text="{Binding RomanPseudo}"  
+                                            TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"
+                                            VerticalOptions="Center"
+                                            HorizontalOptions="Start"
+                                            FontSize="Medium"
+                                            LineBreakMode="WordWrap"/>
+                                    </VerticalStackLayout>
+                                </ScrollView>
+                            </ScrollView>
+                        </Border>
+                        <mylayouts:MatrixLayout
+                            Grid.Row="1"
+                            BindableLayout.ItemTemplate="{StaticResource pieceDead}" 
+                            BindableLayout.ItemsSource="{Binding RomanPiece}"
+                            NbColumns="1" NbRows="8"/>
+                        <mylayouts:MatrixLayout
+                            Grid.Row="1"
+                            BindableLayout.ItemTemplate="{StaticResource pieceTemplate}" 
+                            BindableLayout.ItemsSource="{Binding RomanPiece}"
+                            NbColumns="1" NbRows="8"/>
+                    </Grid>
+                </Grid>
+                <Button  
+                    Grid.Row="2"  
+                    Style="{StaticResource BoutonPrincipal}"  
+                    HorizontalOptions="Center"  
+                    VerticalOptions="End" />
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>

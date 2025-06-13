@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DouShouQiApp.Views.HeaderView"
+             x:Name="this">
+
+    <Border Style="{StaticResource StyleBorderHeader}">
+
+        <Grid Grid.Row="0"
+          ColumnDefinitions="Auto, *, Auto"
+          Padding="20"
+          BackgroundColor="{AppThemeBinding Light={StaticResource Background-LIGHT}, Dark={StaticResource Background-DARK}}"
+          BindingContext="{x:Reference this}">
+
+            <Image Source="{AppThemeBinding Light='back_black.png', Dark='back_white.png'}"
+               Grid.Column="0"
+               Aspect="AspectFill"
+               HeightRequest="40"
+               WidthRequest="40"
+               HorizontalOptions="Start"
+               VerticalOptions="Center"
+               ZIndex="10">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="GoBack" />
+                </Image.GestureRecognizers> 
+            </Image>
+                
+            <Label Text="{Binding PageTitle}"
+               FontSize="50"
+               FontAttributes="Bold"
+               TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"
+               Grid.Column="1"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+
+            <HorizontalStackLayout Grid.Column="2"
+                               HorizontalOptions="End"
+                               Spacing="10">
+
+                <Image Source="{AppThemeBinding Light='volume_black.png', Dark='volume_white.png'}"
+                   Aspect="AspectFill"
+                   HeightRequest="40"
+                   WidthRequest="40"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center"
+                   ZIndex="10"/>
+
+                <Image Source="{AppThemeBinding Light='settings_black.png', Dark='settings_white.png'}"
+                   Aspect="AspectFill"
+                   HeightRequest="40"
+                   WidthRequest="40"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center"
+                   ZIndex="10">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GoToParametre" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </HorizontalStackLayout>
+        </Grid>
+    </Border>
+</ContentView>

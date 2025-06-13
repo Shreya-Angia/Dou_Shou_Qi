@@ -1,0 +1,119 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views ="clr-namespace:DouShouQiApp.Views"
+             Shell.NavBarIsVisible="False"
+             x:Class="DouShouQiApp.Pages.HomePage">
+
+    <Grid BackgroundColor="Black">
+        <Image Source="{AppThemeBinding Light='cieljour.png', Dark='cielnuit.png'}"
+               Aspect="AspectFill"
+               Opacity="1"
+               ZIndex="0"/>
+
+        <Grid RowDefinitions="Auto,Auto,*,Auto"
+              RowSpacing="10"
+              ZIndex="1">
+
+            <!-- En-tête avec logo et boutons -->
+            <Grid Grid.Row="0" 
+                  ColumnDefinitions="*,*"
+                  ColumnSpacing="10">
+
+                <Border Grid.Column="0" 
+                        VerticalOptions="Start"
+                        HorizontalOptions="Start"
+                        Margin="30,0,0,0"
+                        StrokeThickness="2"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource Border-LIGHT}, Dark={StaticResource Border-DARK}}"
+                        StrokeShape="RoundRectangle 0,0,30,30">
+                    <Image Source="{AppThemeBinding Light='presentation_light.png', Dark='presentation_dark.png'}"
+                           HeightRequest="150"
+                           Aspect="AspectFit">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="GoToCharacter" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Border>
+
+                <HorizontalStackLayout Grid.Column="1" 
+                                       HorizontalOptions="End" 
+                                       VerticalOptions="Start">
+
+                    <Button x:Name="PlayPauseButton"
+                            ImageSource="{AppThemeBinding Light='volume_white.png', Dark='volume_black.png'}"
+                            Style="{StaticResource BoutonRond}" 
+                            WidthRequest="50" 
+                            HeightRequest="50" 
+                            IsEnabled="False"  
+                            Clicked="OnPlayPauseClicked" 
+                            /> 
+
+
+                        <Button ImageSource="{AppThemeBinding Light='settings_white.png', Dark='settings_black.png'}"
+                            Style="{StaticResource BoutonRond}"
+                            Clicked="GoToSettings"
+                            WidthRequest="50"  
+                            HeightRequest="50"/> 
+                </HorizontalStackLayout>
+            </Grid>
+
+            <!-- Logo -->
+            <VerticalStackLayout Grid.Row="1" 
+                                 VerticalOptions="Center" 
+                                 HorizontalOptions="Center">
+                <Image Source="dou_shou_qi_mythology.png"
+                       Aspect="AspectFit"
+                       MaximumWidthRequest="1000"/>
+            </VerticalStackLayout>
+
+            <!-- Boutons navigation  -->
+            <Grid Grid.Row="2" 
+                  ColumnDefinitions="*,*,*" 
+                  ColumnSpacing="30"
+                  Margin="30,20">
+
+                <Button Grid.Column="0"
+                        Style="{StaticResource BoutonPrincipal}"
+                        Text="RULES"
+                        Clicked="GoToRules"
+                        FontSize="16"
+                        Padding="15"/>
+
+                <Button Grid.Column="1"
+                        Style="{StaticResource BoutonPrincipal}"
+                        Text="PLAY"
+                        Clicked="GoToSelectGame"
+                        FontSize="16"
+                        Padding="15"/>
+
+                <Button Grid.Column="2"
+                        Style="{StaticResource BoutonPrincipal}"
+                        Text="LEADERBOARD"
+                        Clicked="GoToLeaderboard"
+                        FontSize="16"
+                        Padding="15"/>
+            </Grid>
+
+            <!-- Boutons bas de page -->
+            <Grid Grid.Row="3" 
+                  ColumnDefinitions="*,*" 
+                  Margin="10">
+
+                <Button Grid.Column="0" 
+                        ImageSource="{AppThemeBinding Light='replay_white.png', Dark='replay_black.png'}"
+                        Style="{StaticResource BoutonRond}"
+                        WidthRequest="50"
+                        HeightRequest="50"
+                        HorizontalOptions="Start"/> 
+
+                <Button Grid.Column="1" 
+                        ImageSource="{AppThemeBinding Light='heart_white.png', Dark='heart_black.png'}"
+                        Style="{StaticResource BoutonRond}"
+                        WidthRequest="50"
+                        HeightRequest="50"
+                        Clicked="GoToCredits"
+                        HorizontalOptions="End"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>

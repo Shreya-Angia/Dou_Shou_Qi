@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DouShouQiApp.Pages.SurePausePage"
+             Shell.NavBarIsVisible="False"
+             Title="SurePausePage">
+
+    <Grid BackgroundColor="Black">
+        <Image Source="{AppThemeBinding Light='marbre_blanc.jpg', Dark='marbre_noir.jpg'}"
+               Aspect="AspectFill" 
+               Opacity="1"
+               ZIndex="0"/>
+
+        <Grid VerticalOptions="Center" HorizontalOptions="Center">
+
+            <Border Stroke="{AppThemeBinding Light={StaticResource Border-LIGHT}, Dark={StaticResource Border-DARK}}"
+                    StrokeThickness="4"
+                    StrokeShape="RoundRectangle 20"> 
+
+                <VerticalStackLayout BackgroundColor="{AppThemeBinding Light={StaticResource BgObject-LIGHT}, Dark={StaticResource BgObject-DARK}}"
+                                     Padding="50"
+                                     Spacing="50">
+
+                    <Label Text="You are about to leave the game"
+                           FontSize="50"/>
+
+                    <Grid ColumnDefinitions="*,*,*" HorizontalOptions="Center" ColumnSpacing="50">
+
+                        <Button Grid.Column="0" Text="Save and Quit" 
+                                FontSize="30"
+                                Clicked="GoToSaveAndQuite"
+                                BackgroundColor="{AppThemeBinding Light={StaticResource BgObjectChild-LIGHT}, Dark={StaticResource BgObjectChild-DARK}}"
+                                TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"/>
+                        <Button Grid.Column="1" Text="Quit without saving" 
+                                FontSize="30"
+                                Clicked="GoToQuite"
+                                BackgroundColor="{AppThemeBinding Light={StaticResource BgObjectChild-LIGHT}, Dark={StaticResource BgObjectChild-DARK}}"
+                                TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"/>
+                        <Button Grid.Column="2" Text="Resume game" 
+                                FontSize="30"
+                                Clicked="GoBack"
+                                BackgroundColor="{AppThemeBinding Light={StaticResource BgObjectChild-LIGHT}, Dark={StaticResource BgObjectChild-DARK}}"
+                                TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"/>
+                    </Grid>
+
+                </VerticalStackLayout>
+            </Border>
+        </Grid>
+    </Grid>
+</ContentPage>

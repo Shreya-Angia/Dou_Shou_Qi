@@ -1,0 +1,52 @@
+<!-- ***************************************************************************
+     * Defeat.xaml
+     * ________________________________________________________________________
+     * Project       : DouShouQi Mythology
+     * Author        : ANGIA Shreya
+     * Date          : 21/05/2025
+     * Description   : Page displayed when the player is defeated in the game.
+     *_________________________________________________________________________
+     *************************************************************************** -->
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DouShouQiApp.Pages.Defeat"
+             Shell.NavBarIsVisible="False"
+             Title="Defeat">
+
+    <Grid>
+        <Image Source="empire_fire.png" Aspect="AspectFill"/>
+
+        <!-- Title -->
+        <Label Text="Defeated ! "  
+               HorizontalOptions="Center"  
+               VerticalOptions="Center"
+               Margin="0,100,0,0"
+               FontSize="95"
+               FontAttributes="Bold"
+               FontFamily=""
+               TextColor="White"/>
+
+        <!-- Description -->
+        <Label Text="The gates are broken. Your legacy ends in smoke"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Margin="0,250,0,0"
+               FontSize="30"
+               TextColor="White"
+               FontAttributes="Italic"/>
+
+        <!-- Button -->
+        <Button Text="Menu"
+                Clicked="GoToHomePage" 
+                FontSize="20"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                Margin="30"
+                BackgroundColor="DarkRed"
+                BorderColor="Goldenrod"
+                BorderWidth="2"
+                Padding="20"
+                WidthRequest="110"/>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,34 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
+              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              x:Class="DouShouQiApp.Pages.Prologue_three"
+              Shell.NavBarIsVisible="False"
+              Title="Prologue_three"
+              BackgroundImageSource="slide_three.png">
+
+    <Grid>
+        <Grid RowDefinitions="*,Auto" ColumnDefinitions="*,Auto">
+
+            <Label Text="The divine clash has broken the world.You did not choose this war, but now, it must end. Will you fight for Olympus… or for Rome?" 
+                    Grid.Row="1" Grid.Column="0"
+                    HorizontalOptions="Start" 
+                    VerticalOptions="End" 
+                    Margin="30" 
+                    FontSize="25" 
+                    TextColor="White"  
+                    FontAttributes="Italic"
+                    BackgroundColor="#80000000"  />
+
+            <Button Text="Next"
+                     Clicked="GoToHomePage"   
+                     Grid.Row="1" Grid.Column="1"
+                     HorizontalOptions="End" 
+                     VerticalOptions="End"
+                     Margin="30"
+                     BackgroundColor="DarkRed" 
+                     BorderColor="Goldenrod"
+                     BorderWidth="2"
+                     Padding="12"
+                     WidthRequest="110"/>
+        </Grid>
+    </Grid>
+</ContentPage>

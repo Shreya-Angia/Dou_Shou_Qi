@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DouShouQiApp.Pages.Character"
+             xmlns:views ="clr-namespace:DouShouQiApp.Views"             
+             Shell.NavBarIsVisible="False"
+             Title="Character">
+
+    <Grid BackgroundColor="Black">
+        <Image Source="{AppThemeBinding Light='marbre_blanc.jpg', Dark='marbre_noir.jpg'}"
+               Aspect="AspectFill"
+               Opacity="1"
+               ZIndex="0"/>
+
+        <Grid RowDefinitions="Auto, *"
+              Padding="10"
+              ZIndex="1">
+
+            <views:HeaderView PageTitle="C H A R A C T E R S"/>
+
+            <Grid Grid.Row="1" RowDefinitions="Auto, *"
+                  Padding="10"
+                  RowSpacing="25">
+
+                <!-- Main content -->
+                <Grid Grid.Row="1"
+                      ColumnDefinitions="Auto, Auto, *, Auto"
+                      ColumnSpacing="15"
+                      Padding="15">
+
+                    <!-- Left button -->
+                    <Button Text="◀"
+                            Clicked="OnPreviousClicked"
+                            WidthRequest="60"
+                            HeightRequest="60"
+                            FontSize="26"
+                            CornerRadius="30"
+                            BackgroundColor="{AppThemeBinding Light={StaticResource BgObject-LIGHT}, Dark={StaticResource BgObject-DARK}}"
+                            TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"
+                            BorderColor="{AppThemeBinding Light={StaticResource Border-LIGHT}, Dark={StaticResource Border-DARK}}"
+                            BorderWidth="2"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            Grid.Column="0" />
+
+                    <!-- Image -->
+                    <Border Stroke="{AppThemeBinding Light={StaticResource Border-LIGHT}, Dark={StaticResource Border-DARK}}"
+                            StrokeThickness="2"
+                            BackgroundColor="{AppThemeBinding Light={StaticResource BgObject-LIGHT}, Dark={StaticResource BgObject-DARK}}"
+                            StrokeShape="RoundRectangle 20" 
+                            WidthRequest="260"
+                            HeightRequest="360"
+                            Grid.Column="1">
+                        <Image x:Name="CharacterImage"
+                               Source="hermes.jpg"
+                               Aspect="AspectFill"
+                               WidthRequest="255"
+                               HeightRequest="355" />
+                    </Border>
+
+                    <!-- Character Info -->
+                    <Border Stroke="{AppThemeBinding Light={StaticResource Border-LIGHT}, Dark={StaticResource Border-DARK}}"
+                            StrokeThickness="2"
+                            BackgroundColor="{AppThemeBinding Light={StaticResource BgObject-LIGHT}, Dark={StaticResource BgObject-DARK}}"
+                            StrokeShape="RoundRectangle 20"
+                            HeightRequest="360"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Start"
+                            Grid.Column="2"
+                            Padding="20">
+                        <VerticalStackLayout Spacing="12">
+                            <Label x:Name="CharacterName"
+                                   Text="Hermes - Mercure"
+                                   FontSize="24"
+                                   FontAttributes="Bold"
+                                   TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}" />
+                            <Label x:Name="CharacterCharacteristic"
+                                   Text="Messenger"
+                                   FontSize="16"
+                                   FontAttributes="Italic"
+                                   TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}" />
+                            <ScrollView>
+                                <Label x:Name="CharacterDescription"
+                                       Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor est nisi, in condimentum odio condimentum vel. Sed feugiat aliquet erat non posuere. Vivamus id convallis metus. Praesent sed sapien tortor. Pellentesque pellentesque libero quis scelerisque interdum. Nulla et nisl in lacus euismod ultricies. Donec convallis velit nisi, efficitur scelerisque elit ultrices id. Integer at libero ligula. Proin tellus lorem, dictum eu sodales a, vulputate sit amet urna. Nunc elit mauris, pharetra vel ex quis, laoreet tristique dolor."
+                                       FontSize="15"
+                                       TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}" />
+                            </ScrollView>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <!-- Right button -->
+                    <Button Text="▶"
+                            Clicked="OnNextClicked"
+                            WidthRequest="60"
+                            HeightRequest="60"
+                            FontSize="26"
+                            CornerRadius="30"
+                            BackgroundColor="{AppThemeBinding Light={StaticResource BgObject-LIGHT}, Dark={StaticResource BgObject-DARK}}"
+                            TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"
+                            BorderColor="{AppThemeBinding Light={StaticResource Border-LIGHT}, Dark={StaticResource Border-DARK}}"
+                            BorderWidth="2"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            Grid.Column="3"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>

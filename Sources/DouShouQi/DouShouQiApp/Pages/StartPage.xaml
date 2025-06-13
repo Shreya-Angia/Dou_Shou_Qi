@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DouShouQiApp.Pages.StartPage"
+             Shell.NavBarIsVisible="False"
+             Title="StartPage">
+
+    <Grid BackgroundColor="Black">
+        <Image Source="{AppThemeBinding Light='cieljour.png', Dark='cielnuit.png'}" 
+               Aspect="AspectFill"  
+               Opacity="1" 
+               ZIndex="0"/>
+
+        <Grid RowDefinitions="*,Auto"
+              RowSpacing="50"
+              VerticalOptions="Center" 
+              ZIndex="1">
+
+            <!-- Logo -->
+            <VerticalStackLayout Grid.Row="0" 
+                                 VerticalOptions="Center" 
+                                 HorizontalOptions="Center">
+                <Image Source="dou_shou_qi_mythology.png"
+                       Aspect="AspectFit"/>
+            </VerticalStackLayout>
+
+            <!-- Bouton Start  -->
+            <Grid Grid.Row="1">
+
+                <Button Grid.Column="0"
+                        Style="{StaticResource BoutonPrincipal}"  
+                        Clicked="GoToPrologue_one" 
+                        Text="Start" 
+                        FontSize="40"
+                        Padding="15"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>

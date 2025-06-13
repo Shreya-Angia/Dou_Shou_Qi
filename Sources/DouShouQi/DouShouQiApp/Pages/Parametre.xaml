@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:DouShouQiApp.Views"
+             x:Class="DouShouQiApp.Pages.Parametre"
+             Title="Parametres"
+             Shell.NavBarIsVisible="False">
+
+    <Grid BackgroundColor="Black">
+        <Image Source="{AppThemeBinding Light='marbre_blanc.jpg', Dark='marbre_noir.jpg'}"
+               Aspect="AspectFill"
+               Opacity="1"
+               ZIndex="0"/>
+
+        <Grid RowDefinitions="Auto, *"
+              Padding="10"
+              ZIndex="1">
+
+            <Border Style="{StaticResource StyleBorderHeader}">
+
+                <Grid Grid.Row="0"
+                      ColumnDefinitions="Auto, *, Auto"
+                      Padding="20"
+                      BackgroundColor="{AppThemeBinding Light={StaticResource Background-LIGHT}, Dark={StaticResource Background-DARK}}">
+
+                    <Image Source="{AppThemeBinding Light='back_black.png', Dark='back_white.png'}"
+                           Grid.Column="0"
+                           Aspect="AspectFill"
+                           HeightRequest="40"
+                           WidthRequest="40"
+                           HorizontalOptions="Start"
+                           VerticalOptions="Center"
+                           ZIndex="10">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="GoBack" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                    <Label Text="S E T T I N G S"
+                           FontSize="50"
+                           FontAttributes="Bold"
+                           TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"
+                           Grid.Column="1"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                </Grid>
+            </Border>
+
+            <VerticalStackLayout Grid.Row="1" VerticalOptions="Center">
+
+                <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center"
+                                       Margin="10"
+                                       Padding="5"
+                                       Spacing="10">
+
+                    <Label Text="General Volume"
+                           FontSize="24"
+                           HorizontalOptions="Center"
+                           Padding="10"
+                           BackgroundColor="{AppThemeBinding Light={StaticResource BgObject-LIGHT}, Dark={StaticResource BgObject-DARK}}"
+                           TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"/>
+
+                    <Slider x:Name="VolumeSlider"
+                            Minimum="0"
+                            Maximum="1"
+                            Value="50"
+                            ValueChanged="OnVolumeChanged"
+                            VerticalOptions="Center"
+                            ThumbColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"
+                            MinimumTrackColor="{AppThemeBinding Light={StaticResource Border-LIGHT}, Dark={StaticResource Border-DARK}}"
+                            MaximumTrackColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"
+                            WidthRequest="600"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" 
+                                       Margin="10"
+                                       Padding="5"
+                                       Spacing="10">
+
+                    <Label Text="Music Volume" 
+                           FontSize="24"
+                           HorizontalOptions="Center"
+                           Padding="10"
+                           BackgroundColor="{AppThemeBinding Light={StaticResource BgObject-LIGHT}, Dark={StaticResource BgObject-DARK}}"
+                           TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"/>
+
+                    <Slider x:Name="MusicSlider"
+                            Minimum="0"
+                            Maximum="100"
+                            Value="50"
+                            VerticalOptions="Center"
+                            ThumbColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"
+                            MinimumTrackColor="{AppThemeBinding Light={StaticResource Border-LIGHT}, Dark={StaticResource Border-DARK}}"
+                            MaximumTrackColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"
+                            WidthRequest="600"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout HorizontalOptions="Center"
+                                       VerticalOptions="Center"
+                                       Margin="20"
+                                       Spacing="20">
+
+                    <Label Text="Language"
+                           FontSize="24"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           BackgroundColor="{AppThemeBinding Light={StaticResource BgObject-LIGHT}, Dark={StaticResource BgObject-DARK}}"
+                           TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"
+                           Padding="10" />
+
+                    <ImageButton Source="drapeau_fr.png" 
+                                 CornerRadius="10"  
+                                 WidthRequest="100"
+                                 HeightRequest="75"
+                                 Aspect="Fill"
+                                 BackgroundColor="Transparent"/>
+                    <ImageButton Source="drapeau_ang.jpg" 
+                                 CornerRadius="10"  
+                                 WidthRequest="100"
+                                 HeightRequest="75" 
+                                 Aspect="Fill"
+                                 BackgroundColor="Transparent"/>
+                    <Label Text="(This feature is currently unavailable.)"
+                            FontSize="16"
+                            TextColor="Gray"
+                            VerticalOptions="Center"
+                            Padding="5,0"/> 
+                </HorizontalStackLayout>
+
+                <Button Text="Exit the game" 
+                        FontSize="24"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource BgObject-LIGHT}, Dark={StaticResource BgObject-DARK}}"
+                        TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"
+                        WidthRequest="500"
+                        Clicked="ExitGame"
+                        Margin="10"/>
+
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

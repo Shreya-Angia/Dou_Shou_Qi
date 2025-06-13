@@ -1,0 +1,256 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views ="clr-namespace:DouShouQiApp.Views"
+             x:Class="DouShouQiApp.Pages.Customization"
+             Title="Page de personnalisation"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="Black">
+
+    <Grid BackgroundColor="Black">
+        <Image Source="{AppThemeBinding Light='cieljour.png', Dark='cielnuit.png'}"
+               Aspect="AspectFill"
+               Opacity="1"
+               ZIndex="0"/>
+
+        <Grid RowDefinitions="Auto, *"
+              Padding="10"
+              ZIndex="1">
+
+            <views:HeaderView PageTitle="C U S T O M I S A T I O N"/>
+
+            <ScrollView Grid.Row="1"
+                        Padding="10">
+
+                <VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="50"
+                                         VerticalOptions="Start"
+                                         HorizontalOptions="Center">
+
+                        <HorizontalStackLayout HorizontalOptions="Center" Spacing="30">
+                            <Label Text="ALL" VerticalOptions="Center" FontSize="30"/>
+                            <Switch />
+                            <Label Text="Board" VerticalOptions="Center" FontSize="30"/>
+                            <Switch />
+                            <Label Text="Pieces" VerticalOptions="Center" FontSize="30"/>
+                            <Switch />
+                        </HorizontalStackLayout>
+
+                        <VerticalStackLayout Spacing="0">
+                            <Label Text="  Board functionalities :" FontAttributes="Bold"  FontSize="35"/>
+
+                            <VerticalStackLayout>
+
+                                <VerticalStackLayout Padding="10">
+                                    <HorizontalStackLayout Spacing="30">
+                                        <Label Text="Fontain"
+                                               FontSize="30"
+                                               FontAttributes="Bold"
+                                               VerticalOptions="Center"/>
+                                        <Switch />
+                                    </HorizontalStackLayout>
+                                    <Grid ColumnDefinitions="*,15*,*" HorizontalOptions="Start">
+                                        <Label Grid.Column="1"
+                                               Opacity="0.7"
+                                               Text="   When one of the pieces lands on the central square, the Fountain of Youth disappears. As long as the deity remains on this central square, the water stays deactivated, allowing the deities to move freely. However, if the deity leaves the central square or dies without another deity covering the space, the water rises again, and deities who cannot swim (thus unable to move through water) perish."
+                                               FontSize="25"
+                                               HorizontalOptions="Start"
+                                               LineBreakMode="WordWrap" />
+                                    </Grid>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Padding="10">
+                                    <HorizontalStackLayout Spacing="10">
+                                        <Label Text="Traps"
+                                               FontSize="30"
+                                               FontAttributes="Bold"
+                                               VerticalOptions="Center"/>
+                                        <Switch />
+                                    </HorizontalStackLayout>
+                                    <Grid ColumnDefinitions="*,15*,*" HorizontalOptions="Start">
+                                        <Label Grid.Column="1"
+                                               Opacity="0.7"
+                                               Text="   Activate/Deactivate the traps"
+                                               FontSize="25"
+                                               HorizontalOptions="Start"
+                                               LineBreakMode="WordWrap" />
+                                    </Grid>
+                                </VerticalStackLayout>
+
+                            </VerticalStackLayout>
+
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout>
+
+                            <Label Text="Abilities of the different deities (Pieces) :" FontAttributes="Bold"  FontSize="35"/>
+
+                            <VerticalStackLayout>
+
+                                <!-- Zeus - Jupiter -->
+                                <VerticalStackLayout Padding="10">
+                                    <HorizontalStackLayout Spacing="30">
+                                        <Label Text="Zeus - Jupiter"
+                                               FontSize="30"
+                                               FontAttributes="Bold"
+                                               VerticalOptions="Center"/>
+                                        <Switch />
+                                    </HorizontalStackLayout>
+                                    <Grid ColumnDefinitions="*,15*,*" HorizontalOptions="Start">
+                                        <Label Grid.Column="1"
+                                               Text="   Can electrocute deities around them (within 1 square of distance), including their own team. Electrocuted deities will be unable to move or attack in the next round. This ability has a cooldown of 3 rounds."
+                                               FontSize="25"
+                                               Opacity="0.7"
+                                               HorizontalOptions="Start"
+                                               LineBreakMode="WordWrap" />
+                                    </Grid>
+                                </VerticalStackLayout>
+
+                                <!-- Poséidon - Neptune -->
+                                <VerticalStackLayout Padding="10">
+                                    <HorizontalStackLayout Spacing="30">
+                                        <Label Text="Poseidon - Neptune"
+                                               FontSize="30"
+                                               FontAttributes="Bold"
+                                               VerticalOptions="Center"/>
+                                        <Switch />
+                                    </HorizontalStackLayout>
+                                    <Grid ColumnDefinitions="*,15*,*" HorizontalOptions="Start">
+                                        <Label Grid.Column="1"
+                                               Text="   As gods of the sea, they will have the ability to move through water (passive skill)"
+                                               FontSize="25" 
+                                               Opacity="0.7"
+                                               HorizontalOptions="Start"
+                                               LineBreakMode="WordWrap" />
+                                    </Grid>
+                                </VerticalStackLayout>
+
+                                <!-- Hadès - Pluton -->
+                                <VerticalStackLayout Padding="10">
+                                    <HorizontalStackLayout Spacing="30">
+                                        <Label Text="Hades - Pluto"
+                                               FontSize="30"
+                                               FontAttributes="Bold"
+                                               VerticalOptions="Center"/>
+                                        <Switch />
+                                    </HorizontalStackLayout>
+                                    <Grid ColumnDefinitions="*,15*,*" HorizontalOptions="Start">
+                                        <Label Grid.Column="1"
+                                               Text="   Can launch a bomb and eliminate all deities around them (within 1 square of distance), including deities on their own team. Note that this ability can only be activated once per game."
+                                               Opacity="0.7"
+                                               FontSize="25"
+                                               HorizontalOptions="Start"
+                                               LineBreakMode="WordWrap" />
+                                    </Grid>
+                                </VerticalStackLayout>
+
+                                <!-- Athéna - Minerve -->
+                                <VerticalStackLayout Padding="10">
+                                    <HorizontalStackLayout Spacing="30">
+                                        <Label Text="Athena - Minerva"
+                                               FontSize="30"
+                                               FontAttributes="Bold"
+                                               VerticalOptions="Center"/>
+                                        <Switch />
+                                    </HorizontalStackLayout>
+                                    <Grid ColumnDefinitions="*,15*,*" HorizontalOptions="Start">
+                                        <Label Grid.Column="1"
+                                               Text="   Can only attack diagonally (passive ability). However, they move normally (vertically and horizontally)."
+                                               FontSize="25"
+                                               Opacity="0.7"
+                                               HorizontalOptions="Start"
+                                               LineBreakMode="WordWrap" />
+                                    </Grid>
+                                </VerticalStackLayout>
+
+                                <!-- Héphaïstos - Vulcain -->
+                                <VerticalStackLayout Padding="10">
+                                    <HorizontalStackLayout Spacing="30">
+                                        <Label Text="Hephaestus - Vulcan"
+                                               FontSize="30"
+                                               FontAttributes="Bold"
+                                               VerticalOptions="Center"/>
+                                        <Switch />
+                                    </HorizontalStackLayout>
+                                    <Grid ColumnDefinitions="*,15*,*" HorizontalOptions="Start">
+                                        <Label Grid.Column="1"
+                                               Text="   Automatically deactivate adjacent traps, but only for themselves (passive ability)."
+                                               FontSize="25"
+                                               Opacity="0.7"
+                                               HorizontalOptions="Start"
+                                               LineBreakMode="WordWrap" />
+                                    </Grid>
+                                </VerticalStackLayout>
+
+                                <!-- Hermès - Mercure -->
+                                <VerticalStackLayout Padding="10">
+                                    <HorizontalStackLayout Spacing="30">
+                                        <Label Text="Hermes - Mercury"
+                                               FontSize="30"
+                                               FontAttributes="Bold"
+                                               VerticalOptions="Center"/>
+                                        <Switch />
+                                    </HorizontalStackLayout>
+                                    <Grid ColumnDefinitions="*,15*,*" HorizontalOptions="Start">
+                                        <Label Grid.Column="1"
+                                               Text="  Being exceptionally fast, they have the ability to move forward by two squares (passive ability)."
+                                               FontSize="25"
+                                               Opacity="0.7"
+                                               HorizontalOptions="Start"
+                                               LineBreakMode="WordWrap" />
+                                    </Grid>
+                                </VerticalStackLayout>
+
+                                <!-- Aphrodite - Vénus -->
+                                <VerticalStackLayout Padding="10">
+                                    <HorizontalStackLayout Spacing="30">
+                                        <Label Text="Aphrodite - Venus"
+                                               FontSize="30"
+                                               FontAttributes="Bold"
+                                               VerticalOptions="Center"/>
+                                        <Switch />
+                                    </HorizontalStackLayout>
+                                    <Grid ColumnDefinitions="*,15*,*" HorizontalOptions="Start">
+                                        <Label Grid.Column="1"
+                                               Text="   Can avoid attacks for the next round if their ability is activated. Nearby deities will be unable to attack them. This ability has a cooldown of 3 rounds."
+                                               FontSize="25"
+                                               Opacity="0.7"
+                                               HorizontalOptions="Start"
+                                               LineBreakMode="WordWrap" />
+                                    </Grid>
+                                </VerticalStackLayout>
+
+                                <!-- Héraclès - Hercule -->
+                                <VerticalStackLayout Padding="10">
+                                    <HorizontalStackLayout Spacing="30">
+                                        <Label Text="Heracles - Hercules"
+                                               FontSize="30"
+                                               FontAttributes="Bold"
+                                               VerticalOptions="Center"/>
+                                        <Switch />
+                                    </HorizontalStackLayout>
+                                    <Grid ColumnDefinitions="*,15*,*" HorizontalOptions="Start">
+                                        <Label Grid.Column="1"
+                                               Text="   Can eliminate a higher-ranked character. This passive ability can only be used once. Additionally, they can move through water as a passive trait."
+                                               FontSize="25"
+                                               Opacity="0.7"
+                                               HorizontalOptions="Start"
+                                               LineBreakMode="WordWrap" />
+                                    </Grid>
+                                </VerticalStackLayout>
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+
+                    <Button Text="Validate"
+                            HorizontalOptions="End"
+                            BackgroundColor="#4CAF50"
+                            TextColor="White"
+                            FontSize="40"/>
+                </VerticalStackLayout>
+            </ScrollView>
+
+        </Grid>
+
+    </Grid>
+</ContentPage>

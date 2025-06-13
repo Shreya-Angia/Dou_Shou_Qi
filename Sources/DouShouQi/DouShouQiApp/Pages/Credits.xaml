@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views ="clr-namespace:DouShouQiApp.Views"
+             xmlns:local="clr-namespace:Stubs;assembly=Stubs"
+             x:Class="DouShouQiApp.Pages.Credits"
+             Shell.NavBarIsVisible="False"
+             Title="Credits">
+
+    <Grid BackgroundColor="Black">
+        <Image Source="{AppThemeBinding Light='marbre_blanc.jpg', Dark='marbre_noir.jpg'}"
+               Aspect="AspectFill"
+               Opacity="1"
+               ZIndex="0"/>
+
+        <Grid RowDefinitions="Auto, *"
+              Padding="10"
+              ZIndex="1">
+
+            <views:HeaderView PageTitle="C R E D I T S"/>
+
+            <Grid Grid.Row="1" ColumnDefinitions="4*, 3*" RowDefinitions="2*, *" ColumnSpacing="20" RowSpacing="20" Padding="20">
+
+                <Border Grid.Row="0" Grid.Column="0" Style="{StaticResource StyleBorderCredits}">
+
+                    <Grid  RowDefinitions="auto, 6*">
+
+                        <Label Grid.Row="0"
+                               BackgroundColor="{AppThemeBinding Light={StaticResource BgObject-LIGHT}, Dark={StaticResource BgObject-DARK}}"
+                               Text="    Our Team"
+                               Padding="5"
+                               TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"
+                               FontSize="30"
+                               VerticalTextAlignment="Start"
+                               HorizontalTextAlignment="Start"/>
+
+                        <ScrollView Grid.Row="1" BackgroundColor="{AppThemeBinding Light={StaticResource BgObject-LIGHT}, Dark={StaticResource BgObject-DARK}}">
+
+                            <VerticalStackLayout>
+                                <views:memberCard BindingContext="{x:Static local:TeamMember.Shreya}"/>
+                                <views:memberCard BindingContext="{x:Static local:TeamMember.Anae}"/>
+                                <views:memberCard BindingContext="{x:Static local:TeamMember.Gregoire}"/>
+                                <views:memberCard BindingContext="{x:Static local:TeamMember.Enzo}"/>
+                            </VerticalStackLayout>
+                        </ScrollView>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Row="1" Grid.Column="0"
+                        Style="{StaticResource StyleBorderCredits}">
+
+                    <Grid RowDefinitions="Auto, *">
+                        <Label Grid.Row="0"
+                               BackgroundColor="{AppThemeBinding Light={StaticResource BgObject-LIGHT}, Dark={StaticResource BgObject-DARK}}"
+                               Text="    Acknowledgements"
+                               Padding="5"
+                               TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"
+                               FontSize="30"
+                               VerticalTextAlignment="Start"
+                               HorizontalTextAlignment="Start"/>
+
+                        <ScrollView Grid.Row="1">
+                            <Label BackgroundColor="{AppThemeBinding Light={StaticResource BgObject-LIGHT}, Dark={StaticResource BgObject-DARK}}"
+                                   TextColor="{AppThemeBinding Light={StaticResource Text-LIGHT}, Dark={StaticResource Text-DARK}}"
+                                   Padding="10"
+                                   FontSize="16"
+                                   Text="A heartfelt thank you from our team to everyone playing this game! Your support means the world to us. This game is still under development, so we’d love to see you back soon!" />
+                        </ScrollView>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Column="1" Grid.RowSpan="2"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource BgObject-LIGHT}, Dark={StaticResource BgObject-DARK}}"
+                        Style="{StaticResource StyleBorderCredits}">
+                    <Image Source="equipe.jpg"
+                           Aspect="Fill"/>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>

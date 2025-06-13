@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DouShouQiApp.Pages.Victory"
+             Shell.NavBarIsVisible="False"
+             Title="Victory">
+    <Grid>
+        <Image Source="empire_peaceful.png" Aspect="AspectFill"/>
+
+        <!-- Title -->
+        <Label Text="Victory ! " 
+               x:Name="WinnerLabel"
+               HorizontalOptions="Center"  
+               VerticalOptions="Center"
+               Margin="0,100,0,0"
+               FontSize="95"
+               FontAttributes="Bold"
+               FontFamily=""
+               TextColor="White"  
+               />
+
+        <!-- Description -->
+        <Label Text="The city stands triumphant. Your name will echo through eternity."
+               x:Name="VictoryTextLabel"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Margin="0,265,0,0"
+               FontSize="30" 
+               TextColor="White"
+               FontAttributes="Italic"/>
+
+        <!-- Button -->
+        <Button Text="Menu"
+                Clicked="GoToHomePage"
+                FontSize="20"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                Margin="30"
+                BackgroundColor="DarkRed"
+                BorderColor="Goldenrod"
+                BorderWidth="2"
+                Padding="20"
+                WidthRequest="110"/>
+    </Grid>
+</ContentPage>

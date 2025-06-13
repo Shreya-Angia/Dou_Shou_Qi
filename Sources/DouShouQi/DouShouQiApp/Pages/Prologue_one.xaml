@@ -1,0 +1,47 @@
+<!-- ***************************************************************************
+     * Prologue_one.xaml
+     * ________________________________________________________________________
+     * Project       : DouShouQi Mythology
+     * Author        : ANGIA Shreya
+     * Date          : 24/05/2025
+     * Description   : The first page of the prologue, introducing the story of
+     *                 the gods of Olympus and Rome.
+     *_________________________________________________________________________
+     *************************************************************************** -->
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="DouShouQiApp.Pages.Prologue_one"
+             Shell.NavBarIsVisible="False"
+             Title="Prologue_one">
+    <Grid>
+        <Image Source="slide_one.png" Aspect="AspectFill"/>
+
+        <Grid RowDefinitions="*,Auto" ColumnDefinitions="*,Auto">
+
+
+            <Label Text="For centuries, the gods of Olympus and Rome ruled side by side, equals in name, rivals in secret. But divinity is not meant to be shared. Pride festered, tensions rose... until the heavens cracked."
+                   Grid.Row="1" Grid.Column="0"
+                   HorizontalOptions="Start"
+                   VerticalOptions="End" 
+                   Margin="30"
+                   FontSize="25" 
+                   TextColor="White"
+                   FontAttributes="Italic"
+                   BackgroundColor="#80000000"  />
+
+            <Button Text="Next"
+                    Clicked="GoToPrologue_two"
+                    Grid.Row="1" Grid.Column="1" 
+                    HorizontalOptions="End"
+                    VerticalOptions="End"
+                    Margin="30" 
+                    BackgroundColor="DarkRed"
+                    BorderColor="Goldenrod"
+                    BorderWidth="2"
+                    Padding="12"
+                    WidthRequest="110"/>
+        </Grid>
+
+    </Grid>
+</ContentPage>
